@@ -19,7 +19,7 @@ class Users
   property :created_at, DateTime
 end
  
-DataMapper.finalize.auto_migrate!
+DataMapper.finalize.auto_upgrade!
 
 
 class MyLaunch < Sinatra::Base
