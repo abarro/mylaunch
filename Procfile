@@ -1,1 +1,1 @@
-web: bundle exec ruby my_launch.rb -p $PORT -e production
+web: bundle exec ruby config.ru -p $PORT -e production
