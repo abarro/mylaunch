@@ -1,1 +1,1 @@
-web: bundle exec ruby my_launch.rb -p $PORT
+web: bundle exec rackup my_launch.rb -p $PORT
