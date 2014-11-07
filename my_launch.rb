@@ -9,7 +9,8 @@ require 'pony'
 #gem do BD
 
 #config do bd
-DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/mylaunch.db")
+# DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/mylaunch.db")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/mylaunch.db")
  
 class Users
   include DataMapper::Resource

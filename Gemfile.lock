@@ -32,6 +32,9 @@ GEM
       dm-core (~> 1.2.0)
     dm-migrations (1.2.0)
       dm-core (~> 1.2.0)
+    dm-postgres-adapter (1.2.0)
+      dm-do-adapter (~> 1.2.0)
+      do_postgres (~> 0.10.6)
     dm-serializer (1.2.2)
       dm-core (~> 1.2.0)
       fastercsv (~> 1.5)
@@ -55,6 +58,8 @@ GEM
       uuidtools (~> 2.1)
     dm-validations (1.2.0)
       dm-core (~> 1.2.0)
+    do_postgres (0.10.14)
+      data_objects (= 0.10.14)
     do_sqlite3 (0.10.14)
       data_objects (= 0.10.14)
     execjs (2.2.2)
@@ -67,6 +72,7 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
     multi_json (1.10.1)
+    pg (0.17.1)
     pony (1.11)
       mail (>= 2.0)
     rack (1.5.2)
@@ -117,7 +123,9 @@ PLATFORMS
 
 DEPENDENCIES
   datamapper
+  dm-postgres-adapter
   dm-sqlite-adapter
+  pg
   pony
   sass
   sinatra-asset-pipeline
