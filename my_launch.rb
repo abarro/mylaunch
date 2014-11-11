@@ -61,7 +61,7 @@ class MyLaunch < Sinatra::Base
     n.created_at = Time.now
     n.save
     #send email
-    message = Pony.mail :to => 'abarro@gmail.com',
+    message = Pony.mail :to => params[:email],
                         :from => 'app31383303@heroku.com',
                         :subject => 'SendGrid Delivered!',
                         :body => 'Hello there. You look great today!'
