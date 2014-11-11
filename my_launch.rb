@@ -40,7 +40,6 @@ class MyLaunch < Sinatra::Base
         :enable_starttls_auto => true
       }
     }
-    end
 
   end
   
@@ -63,7 +62,7 @@ class MyLaunch < Sinatra::Base
     n.save
     #send email
     message = Pony.mail :to => 'abarro@gmail.com',
-                        :from => 'abarro@gmail.com',
+                        :from => 'app31383303@heroku.com',
                         :subject => 'SendGrid Delivered!',
                         :body => 'Hello there. You look great today!'
 
