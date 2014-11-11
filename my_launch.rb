@@ -25,6 +25,24 @@ DataMapper.finalize.auto_upgrade!
 class MyLaunch < Sinatra::Base
   set :sessions, true
   register Sinatra::AssetPack
+
+  configure do
+    
+    Pony.options = {
+      :via => :smtp,
+      :via_options => {
+        :address => 'smtp.sendgrid.net',
+        :port => '587',
+        :domain => 'heroku.com',
+        :user_name => ENV['SENDGRID_USERNAME'],
+        :password => ENV['SENDGRID_PASSWORD'],
+        :authentication => :plain,
+        :enable_starttls_auto => true
+      }
+    }
+    end
+
+  end
   
   assets do
      css :main, [
@@ -43,9 +61,12 @@ class MyLaunch < Sinatra::Base
     n.email = params[:email]
     n.created_at = Time.now
     n.save
-    # Pony.mail :to => 'abarro@gmail.com',
-    #             :from => 'abarro@gmail.com',
-    #             :subject => 'Howdy, Partna!'
+    #send email
+    message = Pony.mail :to => 'abarro@gmail.com',
+                        :from => 'abarro@gmail.com',
+                        :subject => 'SendGrid Delivered!',
+                        :body => 'Hello there. You look great today!'
+
     redirect '/obrigado'
   end
 
