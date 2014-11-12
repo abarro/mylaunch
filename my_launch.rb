@@ -63,8 +63,8 @@ class MyLaunch < Sinatra::Base
     #send email
     message = Pony.mail :to => params[:email],
                         :from => 'app31383303@heroku.com',
-                        :subject => 'SendGrid Delivered!',
-                        :body => 'Hello there. You look great today!'
+                        :subject => 'Veja o vídeo que você pediu!',
+                        :body => 'Andarilhoooo'
 
     redirect '/obrigado'
   end
